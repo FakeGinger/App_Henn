@@ -24,6 +24,7 @@ TagManager:
   - Furniture
   - FinalDoor
   - Light
+  - RQ
   layers:
   - Default
   - TransparentFX

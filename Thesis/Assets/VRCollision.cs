@@ -31,6 +31,10 @@ public class VRCollision : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
                 puzzleProgress();
+            } else if (hit.collider.gameObject.tag == "RQ")
+            {
+                hit.collider.gameObject.GetComponent<rq_script>().logFeeling();
+                hit.collider.gameObject.SetActive(false);
             }
         }
     }

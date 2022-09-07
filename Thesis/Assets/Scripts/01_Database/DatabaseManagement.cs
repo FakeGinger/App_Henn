@@ -10,6 +10,8 @@ public class DatabaseManagement : MonoBehaviour
     private string userID;
     private string eventLog;
     private string pictures;
+    private string feeling;
+    private string version;
     public string Name;
     private DatabaseReference reference;
 
@@ -19,29 +21,12 @@ public class DatabaseManagement : MonoBehaviour
         userID = SystemInfo.deviceUniqueIdentifier;
         eventLog = "EventLog";
         pictures = "Screenshots";
-        CreateUser();
+        version = "Version";
+        feeling = "How anxious did you feel?";
         SendLog("Die App wurde gestartet.");
     }
 
-    public void CreateUser()
-    {
-    //    User newUser = new User(Name, eventLog);
-    //    string json = JsonUtility.ToJson(newUser);
-
-        //reference.Child("users").Child(userID).SetRawJsonValueAsync(json).ContinueWith(task =>
-        //{
-        //    if (task.IsCompleted)
-        //    {
-        //        Debug.Log("SUCESSO");
-
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("já foste");
-        //    }
-        //});
-    }
-
+ 
     public void SendLog(string text)
     {
         var parent = reference.Child("users").Child(userID).Child(eventLog).Push();
@@ -56,5 +41,18 @@ public class DatabaseManagement : MonoBehaviour
     public void sendScreenshot()
     {
 
+    }
+
+
+    public void setVersion(int number)
+    {
+        var parent = reference.Child("users").Child(userID).Child(version).Push();
+        parent.SetValueAsync(number);
+    }
+
+    public void setFeeling(string text)
+    {
+        var parent = reference.Child("users").Child(userID).Child(feeling).Push();
+        parent.SetValueAsync(text);
     }
 }
