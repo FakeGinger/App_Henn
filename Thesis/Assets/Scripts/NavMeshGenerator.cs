@@ -40,6 +40,8 @@ public class NavMeshGenerator : MonoBehaviour
 
     private GameObject database;
     public string switchHere;
+    public GameObject gui;
+    public GameObject gui_Furniture;
 
     void Start()
     {
@@ -120,5 +122,7 @@ public class NavMeshGenerator : MonoBehaviour
         mainCamera.SetActive(false);
         Gamehandler.GetComponent<VRSwitch>().test();
         TutorialChamber.SetActive(true);
+        gui.SetActive(false);
+        gui_Furniture.SetActive(false);
     }
 }

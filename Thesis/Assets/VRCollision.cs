@@ -14,6 +14,8 @@ public class VRCollision : MonoBehaviour
     public Material material;
     public GameObject vrNotification;
     public GameObject _map;
+    public GameObject wall;
+    public GameObject rq;
 
     void Update()
     {
@@ -28,9 +30,33 @@ public class VRCollision : MonoBehaviour
             else if (hit.collider.gameObject.tag == "Puzzle")
             {
                 Destroy(hit.collider.gameObject);
-                Globals.puzzleCounter++;
+                puzzleProgress();
             }
         }
+    }
+
+    void puzzleProgress()
+    {
+        Globals.puzzleCounter++;
+        message.SetActive(true);
+
+        if (Globals.puzzleCounter < 3)
+        {
+            var keysLeft = 3 - Globals.puzzleCounter;
+            text.text = "You found a key! Only " + keysLeft + " left.";
+        }
+        else if (Globals.puzzleCounter == 3)
+        {
+            text.text = "You found all of the keys! The final door is now open.";
+        }
+
+        StartCoroutine(RemoveAfterSeconds(2));
+    }
+
+    IEnumerator RemoveAfterSeconds(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        message.SetActive(false);
     }
 
     public void resetPlayer()
@@ -42,7 +68,7 @@ public class VRCollision : MonoBehaviour
         }
 
         //Reset Player
-        Vector3 pos = new Vector3(80, 8, -50);
+        Vector3 pos = new Vector3(40, 8, -110);
         player.transform.position = pos;
         vrNotification.SetActive(false);
 
@@ -61,6 +87,8 @@ public class VRCollision : MonoBehaviour
         _map.GetComponent<Map>().setKeys();
         Globals.puzzleCounter = 0;
         Globals.secondRun = true;
+        wall.SetActive(false);
+        rq.SetActive(true);
     }
 
 }

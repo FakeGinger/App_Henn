@@ -12,6 +12,10 @@ public class Timer : MonoBehaviour
     public GameObject notification;
     public GameObject vrCollision;
     public string description;
+    public GameObject VRComps;
+    public GameObject mainCamera;
+    public GameObject canvasTimer;
+    public GameObject final_not;
 
     void Update()
     {
@@ -54,6 +58,14 @@ public class Timer : MonoBehaviour
         {
             notification.SetActive(false);
             vrCollision.GetComponent<VRCollision>().resetPlayer();
+        } else if(description == "End")
+        {
+            VRComps.SetActive(false);
+            mainCamera.SetActive(true);
+            canvasTimer.SetActive(false);
+            final_not.SetActive(true);
+            Globals.notification = true;
+
         }
     }
     public void alertOff()
