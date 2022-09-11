@@ -42,4 +42,7 @@ public class Globals
     public static int puzzleCounter;
     public static bool secondRun = false;
 
+    //Zeit
+    public static string worldTime = "00:00";
+
 }
