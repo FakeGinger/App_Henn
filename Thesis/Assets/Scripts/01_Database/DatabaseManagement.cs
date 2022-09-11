@@ -23,7 +23,6 @@ public class DatabaseManagement : MonoBehaviour
         pictures = "Screenshots";
         version = "Version";
         feeling = "How anxious did you feel?";
-        SendLog("Die App wurde gestartet.");
     }
 
  
