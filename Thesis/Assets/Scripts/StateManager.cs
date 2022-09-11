@@ -8,6 +8,34 @@ public class StateManager : MonoBehaviour
     public GameObject mainCamera;
     public GameObject TutorialChamber;
     public GameObject Gamehandler;
+    public GameObject database;
+    private string time;
+    private float timer;
+    
+
+    void Start()
+    {
+        time = Globals.worldTime;
+        timer = Globals.worldTimer;
+    }
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        calculateTime(timer);
+    }
+
+    void calculateTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        time = string.Format("{0:00}:{1:00}", minutes, seconds);
+        Globals.worldTime = time;
+    }
+
+
+
     public void notificationOn()
     {
         Globals.notification = true;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a631ae8a76b252b42a8fdddc49869d2e, type: 3}
   m_Name: Task5_Ex
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: dc8572e2f211eaf48beb5abfab56c973, type: 3}
+  icon: {fileID: 21300000, guid: 1c66c38ea8e08904baf12449e4ad7cdb, type: 3}
   notificationMessage: "Third, you\u2019ll walk through this house in virtual reality
     and complete a small task. You\u2019ll have to walk through the house twice using
     the cardboard that was provided. "

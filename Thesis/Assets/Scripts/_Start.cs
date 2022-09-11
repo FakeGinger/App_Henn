@@ -37,6 +37,7 @@ public class _Start : MonoBehaviour
         int scene = Random.Range(1, 3);
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Version " + scene +  " wird geladen.");
         database.GetComponent<DatabaseManagement>().setVersion(scene);
+        Globals.worldTimer = timer;
         SceneManager.LoadScene(scene);
     }
 
