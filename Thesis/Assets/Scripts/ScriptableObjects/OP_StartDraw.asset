@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a631ae8a76b252b42a8fdddc49869d2e, type: 3}
   m_Name: OP_StartDraw
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 574ab2a12df306d47ace14e7cdfebe22, type: 3}
+  icon: {fileID: 21300000, guid: 1c66c38ea8e08904baf12449e4ad7cdb, type: 3}
   notificationMessage: 'The time is up! Now draw the layout of the house on the canvas.
     Use the color blue to draw the outline, red for the path that leads through the
     house. Additionally, you can use green to mark the places of the furniture. '
