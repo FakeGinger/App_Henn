@@ -103,15 +103,16 @@ public class AStern : MonoBehaviour
                     RoomUI.SetActive(false);
                     Globals.buildMode = false;
                     DoorWindowUI.SetActive(true);
-                    database.GetComponent<DatabaseManagement>().SendLog("Der Hausbau wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
+                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
                     setCamera.GetComponent<PerspectivePan>().setCamera();
                     Globals.placeRoom = false;
-                    deleteWalls(); //Doppelte Wände werden entfernt
+                    deleteWalls(); 
 
                     rooms = GameObject.FindGameObjectsWithTag("Room");
                     foreach (GameObject room in rooms)
                     {
                         room.GetComponent<BoxCollider>().enabled = false;
+                        Destroy(room.GetComponent<Room_Building>());
                     }
 
                     return;
@@ -146,12 +147,12 @@ public class AStern : MonoBehaviour
             }
             notOkay.SetActive(true);
             Globals.notification = true;
-            database.GetComponent<DatabaseManagement>().SendLog("Nutzer versucht, Hausbau zu beenden. Es wurden noch nicht genug Räume platziert.");
+            database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Nutzer versucht, Hausbau zu beenden. Es wurden noch nicht genug Räume platziert.");
         } else
         {
             notOkay.SetActive(true);
             Globals.notification = true;
-            database.GetComponent<DatabaseManagement>().SendLog("Nutzer versucht, Hausbau zu beenden. Es wurden noch nicht genug Räume platziert.");
+            database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Nutzer versucht, Hausbau zu beenden. Es wurden noch nicht genug Räume platziert.");
         }
     }
 
