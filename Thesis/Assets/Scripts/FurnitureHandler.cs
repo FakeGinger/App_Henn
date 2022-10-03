@@ -74,7 +74,11 @@ public class FurnitureHandler : MonoBehaviour
 
         int x = Mathf.FloorToInt(this.transform.position.x);
         int z = Mathf.FloorToInt(this.transform.position.z);
-        map.GetComponent<Map>().changeMap(x / 10, z / 10, "x");
+        if (map.GetComponent<Map>().returnMap(x/10, z/10) != null)
+        {
+            Debug.Log(map.GetComponent<Map>().returnMap(x / 10, z / 10));
+            map.GetComponent<Map>().changeMap(x / 10, z / 10, "x");
+        }
     }
 
     void OnMouseDrag()
