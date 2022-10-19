@@ -24,6 +24,10 @@ public class AStern_Tutorial : MonoBehaviour
     public GameObject[] tiles;
     public GameObject startP;
     public GameObject finishP;
+    public GameObject taskDone;
+    public GameObject taskNotDone;
+    public GameObject RoomUI;
+
     [SerializeField] private GameObject roomCollector;
     [SerializeField] private GameObject[] walls;
     [SerializeField] private Transform wallsParent;
@@ -54,13 +58,11 @@ public class AStern_Tutorial : MonoBehaviour
             start.X = Mathf.FloorToInt(startP.transform.position.x);
             start.Z = Mathf.FloorToInt(startP.transform.position.z);
             path.Add(start);
-        Debug.Log(start.X + "," + start.Z);
 
             var finish = new Tile();
             finish.X = Mathf.FloorToInt(finishP.transform.position.x);
             finish.Z = Mathf.FloorToInt(finishP.transform.position.z) - 10;
             start.SetDistance(finish.X, finish.Z);
-        Debug.Log(finish.X + "," + finish.Z);
 
             while (path.Count != 0)
             {
@@ -68,18 +70,19 @@ public class AStern_Tutorial : MonoBehaviour
 
                 if (checkTile.X == finish.X && checkTile.Z == finish.Z)
                 {
-                    Debug.Log("success");
-                    //pathOkay.SetActive(true);
-                    //Globals.notification = true;
-                    //RoomUI.SetActive(false);
-                    //Globals.buildMode = false;
-                    //DoorWindowUI.SetActive(true);
-                    //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
-                    //setCamera.GetComponent<PerspectivePan>().setCamera();
-                    //Globals.placeRoom = false;
-                    //deleteWalls();
 
-                    rooms = GameObject.FindGameObjectsWithTag("Room");
+                //Globals.buildMode = false;
+                //DoorWindowUI.SetActive(true);
+                //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
+                //setCamera.GetComponent<PerspectivePan>().setCamera();
+                //Globals.placeRoom = false;
+
+                taskDone.SetActive(true);
+                //Globals.notification = true;
+                RoomUI.SetActive(false);
+                deleteWalls();
+
+                rooms = GameObject.FindGameObjectsWithTag("Room");
                     foreach (GameObject room in rooms)
                     {
                         room.GetComponent<BoxCollider>().enabled = false;
@@ -114,7 +117,7 @@ public class AStern_Tutorial : MonoBehaviour
                     }
                 }
             }
-        //notOkay.SetActive(true);
+        taskNotDone.SetActive(true);
         //Globals.notification = true;
         //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Nutzer versucht, Hausbau zu beenden. Es wurden noch nicht genug Räume platziert.");
     }

@@ -39,6 +39,7 @@ public class Map : MonoBehaviour
                 {
                     Instantiate(wall, testing.transform.position, testing.transform.rotation);
                     testing.gameObject.SetActive(false);
+                    Debug.Log("hier");
                     //Log
                     return true;
                 }

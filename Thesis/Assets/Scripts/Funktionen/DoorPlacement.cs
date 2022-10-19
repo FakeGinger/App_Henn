@@ -20,7 +20,7 @@ public class DoorPlacement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && buildDoors && !Globals.notification)
+        if (Input.GetMouseButtonDown(0) && buildDoors &&!Globals.notification)
         {
             RaycastHit hit = new RaycastHit();
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -36,7 +36,7 @@ public class DoorPlacement : MonoBehaviour
 
                     Destroy(hit.collider.gameObject);
                     Instantiate(door, placeholder, rotation, doorCollection.transform);
-
+ 
                     database.GetComponent<DatabaseManagement>().SendLog("Tür wurde bei " + placeholder + " platziert");
 
                     if (checking.GetComponent<Map>().removeDoors())
