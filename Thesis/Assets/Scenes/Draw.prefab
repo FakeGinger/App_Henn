@@ -334,6 +334,8 @@ MonoBehaviour:
   path: {fileID: 2534130198756470848}
   moreFurniture: {fileID: 0}
   switchHere: Yes
+  gui: {fileID: 0}
+  gui_Furniture: {fileID: 0}
 --- !u!1 &1871830759477126572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +2800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a474dfbc649a4144faa30aba890df35e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2516b1091cb2cb840bfbed164207bb02, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
