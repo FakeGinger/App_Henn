@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Notification : MonoBehaviour
 {
     [Header("UI Content")]
     [SerializeField] public Text notificationTextUI;
     [SerializeField] public Image notificationIconUI;
+    public TMP_Text test;
 
     [Header("ScriptableObject")]
     [SerializeField] public Notification_Scriptable noteScriptable;

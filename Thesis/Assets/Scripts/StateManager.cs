@@ -9,6 +9,7 @@ public class StateManager : MonoBehaviour
     public GameObject TutorialChamber;
     public GameObject Gamehandler;
     public GameObject database;
+    public string textForLog;
     private string time;
     private float timer;
     
@@ -17,6 +18,8 @@ public class StateManager : MonoBehaviour
     {
         time = Globals.worldTime;
         timer = Globals.worldTimer;
+        //textForLog = text.text;
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": " + textForLog);
     }
 
     void Update()
@@ -85,4 +88,5 @@ public class StateManager : MonoBehaviour
         Gamehandler.GetComponent<VRSwitch>().test();
         TutorialChamber.SetActive(true);
     }
+
 }
