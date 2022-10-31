@@ -27,6 +27,7 @@ public class AStern_Tutorial : MonoBehaviour
     public GameObject taskDone;
     public GameObject taskNotDone;
     public GameObject RoomUI;
+    public GameObject database;
 
     [SerializeField] private GameObject roomCollector;
     [SerializeField] private GameObject[] walls;
@@ -77,6 +78,7 @@ public class AStern_Tutorial : MonoBehaviour
                 //setCamera.GetComponent<PerspectivePan>().setCamera();
                 //Globals.placeRoom = false;
 
+                database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau des Tutorials wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
                 taskDone.SetActive(true);
                 //Globals.notification = true;
                 RoomUI.SetActive(false);
