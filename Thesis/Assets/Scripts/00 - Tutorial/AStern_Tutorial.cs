@@ -36,6 +36,8 @@ public class AStern_Tutorial : MonoBehaviour
 
     public void checkForPath()
     {
+        if (!Globals.notification)
+        {
             if (Globals.objectID != 0)
             {
                 var x = GameObject.Find(Globals.objectID.ToString());
@@ -72,19 +74,19 @@ public class AStern_Tutorial : MonoBehaviour
                 if (checkTile.X == finish.X && checkTile.Z == finish.Z)
                 {
 
-                //Globals.buildMode = false;
-                //DoorWindowUI.SetActive(true);
-                //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
-                //setCamera.GetComponent<PerspectivePan>().setCamera();
-                //Globals.placeRoom = false;
+                    //Globals.buildMode = false;
+                    //DoorWindowUI.SetActive(true);
+                    //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
+                    //setCamera.GetComponent<PerspectivePan>().setCamera();
+                    //Globals.placeRoom = false;
 
-                database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau des Tutorials wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
-                taskDone.SetActive(true);
-                //Globals.notification = true;
-                RoomUI.SetActive(false);
-                deleteWalls();
+                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau des Tutorials wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
+                    taskDone.SetActive(true);
+                    //Globals.notification = true;
+                    RoomUI.SetActive(false);
+                    deleteWalls();
 
-                rooms = GameObject.FindGameObjectsWithTag("Room");
+                    rooms = GameObject.FindGameObjectsWithTag("Room");
                     foreach (GameObject room in rooms)
                     {
                         room.GetComponent<BoxCollider>().enabled = false;
@@ -119,9 +121,10 @@ public class AStern_Tutorial : MonoBehaviour
                     }
                 }
             }
-        taskNotDone.SetActive(true);
-        //Globals.notification = true;
-        //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Nutzer versucht, Hausbau zu beenden. Es wurden noch nicht genug Räume platziert.");
+            taskNotDone.SetActive(true);
+            //Globals.notification = true;
+            //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Nutzer versucht, Hausbau zu beenden. Es wurden noch nicht genug Räume platziert.");
+        }
     }
 
     private static List<Tile> GetWalkableTiles(List<Tile> map, Tile currentTile, Tile targetTile)
