@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     public GameObject mainCamera;
     public GameObject canvasTimer;
     public GameObject final_not;
+    public GameObject timerOverCheck;
 
     void Update()
     {
@@ -29,8 +30,8 @@ public class Timer : MonoBehaviour
             else
             {
                 timeRemaining = 0;
-                nextStep();
                 timerRunning = false;
+                timerOverCheck.SetActive(true);
             }
         }
     }
@@ -48,7 +49,7 @@ public class Timer : MonoBehaviour
         timerRunning = true;
     }
 
-    void nextStep()
+    public void nextStep()
     {
         if (description == "Memory")
         {
@@ -71,5 +72,11 @@ public class Timer : MonoBehaviour
     public void alertOff()
     {
         Globals.alert = false;
+    }
+
+    public void addTime()
+    {
+        timeRemaining = 60;
+        timerRunning = true;
     }
 }

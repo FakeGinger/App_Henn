@@ -37,6 +37,7 @@ public class NavMeshGenerator : MonoBehaviour
     public GameObject noPath;
     public GameObject path;
     public GameObject moreFurniture;
+    public GameObject path_doors;
 
     private GameObject database;
     public string switchHere;
@@ -72,8 +73,7 @@ public class NavMeshGenerator : MonoBehaviour
 
                 if (this.name != "NavMesh_Furniture")
                 {
-                    DoorUI.SetActive(false);
-                    FurnitureUI.SetActive(true);
+                    //path_doors.SetActive(true);
                     database.GetComponent<DatabaseManagement>().SendLog("Es wurden ausreichend Türen platziert. Platzierung von Fenstern wird gestartet.");
                 }
                 else

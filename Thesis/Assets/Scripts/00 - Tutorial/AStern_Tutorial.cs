@@ -79,20 +79,8 @@ public class AStern_Tutorial : MonoBehaviour
                     //database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
                     //setCamera.GetComponent<PerspectivePan>().setCamera();
                     //Globals.placeRoom = false;
-
-                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau des Tutorials wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
-                    taskDone.SetActive(true);
-                    //Globals.notification = true;
-                    RoomUI.SetActive(false);
-                    deleteWalls();
-
-                    rooms = GameObject.FindGameObjectsWithTag("Room");
-                    foreach (GameObject room in rooms)
-                    {
-                        room.GetComponent<BoxCollider>().enabled = false;
-                        Destroy(room.GetComponent<Room_Building>());
-                    }
-
+                  
+                    taskDone.SetActive(true);                   
                     return;
                 }
                 visited.Add(checkTile);
@@ -200,6 +188,20 @@ public class AStern_Tutorial : MonoBehaviour
                     existingWalls[i].SetActive(false);
                 }
             }
+        }
+    }
+
+    public void nextStep() {
+
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau des Tutorials wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
+        RoomUI.SetActive(false);
+        deleteWalls();
+
+        rooms = GameObject.FindGameObjectsWithTag("Room");
+        foreach (GameObject room in rooms)
+        {
+            room.GetComponent<BoxCollider>().enabled = false;
+            Destroy(room.GetComponent<Room_Building>());
         }
     }
 
