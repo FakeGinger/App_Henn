@@ -45,5 +45,6 @@ public class Globals
     //Zeit
     public static string worldTime = "00:00";
     public static float worldTimer;
+    public static bool waiting = false;
 
 }

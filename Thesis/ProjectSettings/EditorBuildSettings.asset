@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 9b6fe992b19658845a3b33465d2186b0
   - enabled: 1
-    path: Assets/Scenes/MitPUT.unity
-    guid: 7674d1519a4cdc8468888effd6b922b1
-  - enabled: 1
     path: Assets/Scenes/OhnePUT.unity
     guid: da403719737f55e4fbe604860c3c53f2
+  - enabled: 1
+    path: Assets/Scenes/MitPUT.unity
+    guid: 7674d1519a4cdc8468888effd6b922b1
   m_configObjects: {}

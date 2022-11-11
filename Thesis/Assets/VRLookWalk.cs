@@ -26,12 +26,13 @@ public class VRLookWalk : MonoBehaviour
         {
             finish.SetActive(true);
             timer.GetComponent<Timer>().timerRunning = true;
+            Globals.waiting = true;
         } else if(transform.position.z > 100 && Globals.secondRun)
         {
             endOfStudy.SetActive(true);
         }
 
-        if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f)
+        if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f && Globals.waiting == false)
         {
             moveForward = true;
         }

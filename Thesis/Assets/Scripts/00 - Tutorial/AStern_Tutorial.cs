@@ -194,6 +194,7 @@ public class AStern_Tutorial : MonoBehaviour
     public void nextStep() {
 
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der Hausbau des Tutorials wurde abgeschlossen. Die Platzierung von Türen wird gestartet.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + "--- Phase 2: Türen ---");
         RoomUI.SetActive(false);
         deleteWalls();
 

@@ -16,7 +16,8 @@ public class _Start : MonoBehaviour
         //Für LimeSurvey
         userID = SystemInfo.deviceUniqueIdentifier;
         link = "https://claustrophobiavr.limesurvey.net/329637?token=llDx866cZvDy24k&newtest=Y&Phone_ID=" + userID;  
-        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Die App wurde gestartet.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": App-Start");
+        database.GetComponent<DatabaseManagement>().SendLog("----------");
     }
 
     void Update()
@@ -27,16 +28,18 @@ public class _Start : MonoBehaviour
 
     public void open()
     {
-        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der erste Fragebogen wurde gestartet.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der erste Fragebogen wird gestartet.");
         Application.OpenURL(link);
     }
 
     public void loadScene()
     {
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der erste Fragebogen wurde beendet.");
-        int scene = Random.Range(1, 3);
+        database.GetComponent<DatabaseManagement>().SendLog("----------");
+        int scene = Random.Range(1, 2);
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Version " + scene +  " wird geladen.");
         database.GetComponent<DatabaseManagement>().setVersion(scene);
+        database.GetComponent<DatabaseManagement>().SendLog("----------");
         Globals.worldTimer = timer;
         SceneManager.LoadScene(scene);
     }

@@ -31,7 +31,13 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerRunning = false;
-                timerOverCheck.SetActive(true);
+                if (description == "Memory")
+                {
+                    timerOverCheck.SetActive(true);
+                } else
+                {
+                    nextStep();
+                }
             }
         }
     }
@@ -59,6 +65,7 @@ public class Timer : MonoBehaviour
         {
             notification.SetActive(false);
             vrCollision.GetComponent<VRCollision>().resetPlayer();
+            Globals.waiting = false;
         } else if(description == "End")
         {
             VRComps.SetActive(false);

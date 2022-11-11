@@ -46,7 +46,7 @@ public class Room_Building : MonoBehaviour
         }
         
         this.name = this.GetInstanceID().ToString();
-        database.GetComponent<DatabaseManagement>().SendLog("Raum " + this.name + " mit der Größe " + roomSize + " wurde auf der Position " + this.transform.position + " erschaffen.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Raum " + this.name + " mit der Größe " + roomSize + " wurde auf der Position " + this.transform.position + " erschaffen.");
 
         Globals.objectID = this.GetInstanceID();
         Globals.activeObject = this.transform.gameObject;
@@ -140,7 +140,7 @@ public class Room_Building : MonoBehaviour
         }
 
         //Globals.buildRoom = false;
-        database.GetComponent<DatabaseManagement>().SendLog("Raum " + this.name + " wurde auf die Position " + this.transform.position + " bewegt.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Raum " + this.name + " wurde auf die Position " + this.transform.position + " bewegt.");
     }
 
     void OnTriggerEnter(Collider col)
@@ -180,12 +180,12 @@ public class Room_Building : MonoBehaviour
     public void rotate()
     {
         this.transform.Rotate(0, 90f, 0);
-        database.GetComponent<DatabaseManagement>().SendLog("Raum " + this.name + " wurde rotiert.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Raum " + this.name + " wurde rotiert.");
     }
 
     public void delete()
     {
-        database.GetComponent<DatabaseManagement>().SendLog("Raum " + this.name + " wurde gelöscht.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Raum " + this.name + " wurde gelöscht.");
         Globals.objectID = 0;
         Globals.activeObject = null;
         editingElements.SetActive(false);
@@ -197,7 +197,7 @@ public class Room_Building : MonoBehaviour
     {
         if (Globals.placementOkay)
         {
-            database.GetComponent<DatabaseManagement>().SendLog("Raum " + this.name + " wurde auf der Position " + this.transform.position + " platziert.");
+            database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Raum " + this.name + " wurde auf der Position " + this.transform.position + " platziert.");
             var outline = inhalt.GetComponent<Outline>();
             outline.enabled = false;
             buildMode = false;
