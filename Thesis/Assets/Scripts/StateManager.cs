@@ -16,9 +16,9 @@ public class StateManager : MonoBehaviour
 
     void Start()
     {
+        //this.textForLog = textForLog;
         time = Globals.worldTime;
         timer = Globals.worldTimer;
-        //textForLog = text.text;
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": " + textForLog);
     }
 

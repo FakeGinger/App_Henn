@@ -41,7 +41,7 @@ public class Rubber : MonoBehaviour
 
                     Destroy(hit.collider.gameObject);
                     Instantiate(newWall, placeholder, rotation);
-                    database.GetComponent<DatabaseManagement>().SendLog("Objekt " + hit.collider.tag + " auf der Position " + placeholder + " wurde gelöscht.");
+                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Objekt " + hit.collider.tag + " auf der Position " + placeholder + " wurde gelöscht.");
                 }
 
                 else if (hit.collider.tag == "Door" && !Globals.placeWindow)
@@ -54,7 +54,7 @@ public class Rubber : MonoBehaviour
 
                     Destroy(hit.collider.gameObject);
                     Instantiate(newWall, placeholder, rotation);
-                    database.GetComponent<DatabaseManagement>().SendLog("Objekt " + hit.collider.tag + " auf der Position " + placeholder + " wurde gelöscht.");
+                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Objekt " + hit.collider.tag + " auf der Position " + placeholder + " wurde gelöscht.");
                 }
 
                 }

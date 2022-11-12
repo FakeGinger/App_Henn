@@ -854,7 +854,7 @@ MonoBehaviour:
   TutorialChamber: {fileID: 1942515022821601011}
   Gamehandler: {fileID: 152913438}
   database: {fileID: 1688000949}
-  textForLog: 
+  textForLog: test
 --- !u!1 &177521276
 GameObject:
   m_ObjectHideFlags: 0

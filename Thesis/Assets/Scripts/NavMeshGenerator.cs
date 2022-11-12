@@ -74,7 +74,7 @@ public class NavMeshGenerator : MonoBehaviour
                 if (this.name != "NavMesh_Furniture")
                 {
                     //path_doors.SetActive(true);
-                    database.GetComponent<DatabaseManagement>().SendLog("Es wurden ausreichend Türen platziert. Platzierung von Fenstern wird gestartet.");
+                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Es wurden ausreichend Türen platziert. Phase 3: Fenster kann gestartet werden.");
                 }
                 else
                 {
@@ -96,7 +96,7 @@ public class NavMeshGenerator : MonoBehaviour
             else
             {
                 noPath.SetActive(true);
-                database.GetComponent<DatabaseManagement>().SendLog("Es wurde eine Überprüfung gestartet, doch es gibt keinen Weg durch das Haus.");
+                database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Es wurde eine Überprüfung gestartet, doch es gibt keinen Weg durch das Haus.");
                 Globals.notification = true;
             }
         }

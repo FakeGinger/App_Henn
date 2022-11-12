@@ -45,7 +45,7 @@ public class FurnitureHandler : MonoBehaviour
         var outline = inhalt.GetComponent<Outline>();
         outline.enabled = true;
 
-        database.GetComponent<DatabaseManagement>().SendLog("Möbelstück " + this.name + " der Art " + typ + " wurde auf der Position " + this.transform.position + " erschaffen.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Möbelstück " + this.name + " der Art " + typ + " wurde auf der Position " + this.transform.position + " erschaffen.");
 
         int x = Mathf.FloorToInt(this.transform.position.x);
         int z = Mathf.FloorToInt(this.transform.position.z);
@@ -104,7 +104,7 @@ public class FurnitureHandler : MonoBehaviour
         this.transform.position = returnPos;
 
         Globals.buildRoom = false;
-        database.GetComponent<DatabaseManagement>().SendLog("Möbelstück " + this.name + " wurde auf die Position " + this.transform.position + " bewegt.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Möbelstück " + this.name + " wurde auf die Position " + this.transform.position + " bewegt.");
 
         checkMap(x, z);
         
@@ -113,12 +113,12 @@ public class FurnitureHandler : MonoBehaviour
     public void rotate()
     {
         this.transform.Rotate(0, 90f, 0);
-        database.GetComponent<DatabaseManagement>().SendLog("Möbelstück " + this.name + " wurde rotiert.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Möbelstück " + this.name + " wurde rotiert.");
     }
 
     public void delete()
     {
-        database.GetComponent<DatabaseManagement>().SendLog("Möbelstück " + this.name + " wurde gelöscht.");
+        database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Möbelstück " + this.name + " wurde gelöscht.");
         Globals.objectID = 0;
         Globals.activeObject = null;
         editingElements.SetActive(false);
@@ -135,7 +135,7 @@ public class FurnitureHandler : MonoBehaviour
             var outline = inhalt.GetComponent<Outline>();
             outline.enabled = false;
             map.GetComponent<Map>().mapFurniture();
-            database.GetComponent<DatabaseManagement>().SendLog("Möbelstück " + this.name + " wurde auf der Position " + this.transform.position + " platziert.");
+            database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Möbelstück " + this.name + " wurde auf der Position " + this.transform.position + " platziert.");
         }
         else
         {

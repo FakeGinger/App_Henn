@@ -7,9 +7,9 @@ public class User
     public string eventLog;
     public string store;
 
-    public User(string name, string logs, string storage) 
+    public User(string logs, string storage) 
     {
-        this.name = name;
+        //this.name = name;
         this.eventLog = logs;
         this.store = storage;
         

@@ -5,7 +5,7 @@ using UnityEngine;
 public class WindowPlacement : MonoBehaviour
 {
     public GameObject window;
-    //public GameObject database;
+    public GameObject database;
     private bool deactivateBuild;
 
 
@@ -44,7 +44,7 @@ public class WindowPlacement : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                     Instantiate(window, placeholder, rotation);
 
-                    //database.GetComponent<DatabaseManagement>().SendLog("Fenster wurde bei " + placeholder + " platziert");
+                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Fenster wurde bei " + placeholder + " platziert");
                 }
             }
         }

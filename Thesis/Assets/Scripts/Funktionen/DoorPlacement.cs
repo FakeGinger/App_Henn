@@ -37,7 +37,7 @@ public class DoorPlacement : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                     Instantiate(door, placeholder, rotation, doorCollection.transform);
  
-                    database.GetComponent<DatabaseManagement>().SendLog("Tür wurde bei " + placeholder + " platziert");
+                    database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Tür wurde bei " + placeholder + " platziert");
 
                     if (checking.GetComponent<Map>().removeDoors())
                     {

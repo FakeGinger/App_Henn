@@ -1,26 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using Firebase;
 using Firebase.Database;
-using UnityEngine.UI;
+using Firebase.Storage;
+using System.IO;
+using Firebase.Extensions;
 
 public class DatabaseManagement : MonoBehaviour
 {
     private string userID;
     private string eventLog;
-    private string pictures;
     private string feeling;
     private string version;
-    public string Name;
     private DatabaseReference reference;
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
 
     void Start()
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
+        storage = FirebaseStorage.DefaultInstance;
+        storageReference = storage.GetReferenceFromUrl("gs://bachelorarbeit-57851.appspot.com");
         userID = SystemInfo.deviceUniqueIdentifier;
         eventLog = "EventLog";
-        pictures = "Screenshots";
         version = "Version";
         feeling = "How anxious did you feel?";
     }
@@ -39,7 +41,21 @@ public class DatabaseManagement : MonoBehaviour
 
     public void sendScreenshot()
     {
+        //Händisch eingegeben, damit es funktioniert. Tests für Android nötig
+        ScreenCapture.CaptureScreenshot("Assets/test.png");
+        //für Android persistendData..
+        string url = Application.dataPath + "/test.png";
+        byte[] bytes = File.ReadAllBytes("Assets/test.png");
 
+        StorageReference uploadRef = storageReference.Child("uploads/newFile.png");
+        uploadRef.PutBytesAsync(bytes).ContinueWithOnMainThread((task) =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                Debug.Log(task.Exception.ToString());
+            }
+            else { }
+        });
     }
 
 
