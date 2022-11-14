@@ -17,6 +17,8 @@ public class Timer : MonoBehaviour
     public GameObject canvasTimer;
     public GameObject final_not;
     public GameObject timerOverCheck;
+    public GameObject timeOverTwo;
+    private bool additionalTime = false;
 
     void Update()
     {
@@ -33,7 +35,15 @@ public class Timer : MonoBehaviour
                 timerRunning = false;
                 if (description == "Memory")
                 {
-                    timerOverCheck.SetActive(true);
+                    if (!additionalTime)
+                    {
+                        timerOverCheck.SetActive(true);
+                    }
+                    else
+                    {
+                        Globals.alert = true;
+                        timeOverTwo.SetActive(true);
+                    }
                 } else
                 {
                     nextStep();
@@ -59,8 +69,7 @@ public class Timer : MonoBehaviour
     {
         if (description == "Memory")
         {
-            Globals.alert = true;
-            notification.SetActive(true);
+
         } else if(description == "Reset")
         {
             notification.SetActive(false);
@@ -85,5 +94,6 @@ public class Timer : MonoBehaviour
     {
         timeRemaining = 60;
         timerRunning = true;
+        additionalTime = true;
     }
 }

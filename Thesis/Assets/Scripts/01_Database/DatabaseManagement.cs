@@ -39,15 +39,15 @@ public class DatabaseManagement : MonoBehaviour
         SendLog("Der Fensterbau wurde abgeschlossen. Aufgabe Möbelbau wird gestartet.");
     }
 
-    public void sendScreenshot()
+    public void sendScreenshotTutorial()
     {
         //Händisch eingegeben, damit es funktioniert. Tests für Android nötig
-        ScreenCapture.CaptureScreenshot("Assets/test.png");
+        ScreenCapture.CaptureScreenshot("Assets/" + userID + "_tutorial.png");
         //für Android persistendData..
-        string url = Application.dataPath + "/test.png";
-        byte[] bytes = File.ReadAllBytes("Assets/test.png");
+        string url = Application.dataPath + "/" + userID + "_tutorial.png";
+        byte[] bytes = File.ReadAllBytes("Assets/" + userID + "_tutorial.png");
 
-        StorageReference uploadRef = storageReference.Child("uploads/newFile.png");
+        StorageReference uploadRef = storageReference.Child("uploads/" + userID + "_tutorial.png");
         uploadRef.PutBytesAsync(bytes).ContinueWithOnMainThread((task) =>
         {
             if (task.IsFaulted || task.IsCanceled)

@@ -892,8 +892,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 450709261}
-        m_MethodName: switchScenes
+      - m_Target: {fileID: 1776909519}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279653850}
+        m_MethodName: sendScreenshotTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -905,6 +916,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 254876802}
         m_MethodName: sendLog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 450709261}
+        m_MethodName: switchScenes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1421,7 +1443,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   TutorialChamber: {fileID: 0}
   Gamehandler: {fileID: 0}
-  database: {fileID: 1947942933}
+  database: {fileID: 1279653849}
   textForLog: TUTORIAL Start
 --- !u!222 &450709263
 CanvasRenderer:
@@ -3131,8 +3153,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You completed the tutorial! Do you want to place more furniture or start
+  m_text: 'You completed the tutorial! Do you want to place more furniture or start
     with the study?
+
+    If you continue, a screenshot of your level is send to the
+    database.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -6560,6 +6585,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269666984}
   m_CullTransparentMesh: 0
+--- !u!1 &1279653849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6424294912101931192, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+    type: 3}
+  m_PrefabInstance: {fileID: 2046205562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1279653850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6424294912101931191, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+    type: 3}
+  m_PrefabInstance: {fileID: 2046205562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279653849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9315577cf5443204eab082c54e1146ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1339464548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6636,7 +6679,7 @@ PrefabInstance:
     - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
         type: 3}
@@ -6701,18 +6744,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1339684304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1339684306 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6424294912101931191, guid: 82edb15447b03ab418f82c2bc9a5cb06,
-    type: 3}
-  m_PrefabInstance: {fileID: 1339684304}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947942933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9315577cf5443204eab082c54e1146ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1340460610
 GameObject:
   m_ObjectHideFlags: 0
@@ -9829,7 +9860,7 @@ PrefabInstance:
     - target: {fileID: 506087375048868209, guid: a7d9cb7b48422f34fa6af5828ebcd2d8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 506087375048868209, guid: a7d9cb7b48422f34fa6af5828ebcd2d8,
         type: 3}
@@ -11664,7 +11695,7 @@ PrefabInstance:
     - target: {fileID: 3756368067346481356, guid: 511e6ebbaa637ec4ca5aa5a59e2e5d93,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3756368067346481356, guid: 511e6ebbaa637ec4ca5aa5a59e2e5d93,
         type: 3}
@@ -11985,6 +12016,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041330981}
   m_CullTransparentMesh: 0
+--- !u!1001 &2046205562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 69.81173
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5912094
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 34.44815
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931190, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424294912101931192, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+        type: 3}
+      propertyPath: m_Name
+      value: Database
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82edb15447b03ab418f82c2bc9a5cb06, type: 3}
 --- !u!1 &2056885180
 GameObject:
   m_ObjectHideFlags: 0
@@ -34850,17 +34950,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2455465207371290701}
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1339684306}
-        m_MethodName: sendScreenshot
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
