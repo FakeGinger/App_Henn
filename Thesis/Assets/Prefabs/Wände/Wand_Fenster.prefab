@@ -490,11 +490,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3991419548598795187}
     m_Modifications:
+    - target: {fileID: 3897180229938330667, guid: cff5b07fa93c434429cd753738e9aed0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bbf12f57d42638e468f7a5d7c373a5af, type: 2}
+    - target: {fileID: 5331225681299558892, guid: cff5b07fa93c434429cd753738e9aed0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5362d6759a862ce49ae800428b08860b, type: 2}
     - target: {fileID: 6015710673821716247, guid: cff5b07fa93c434429cd753738e9aed0,
         type: 3}
       propertyPath: m_Name
       value: WindowSingleSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 6998771686089215466, guid: cff5b07fa93c434429cd753738e9aed0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bbf12f57d42638e468f7a5d7c373a5af, type: 2}
+    - target: {fileID: 8054643390192492200, guid: cff5b07fa93c434429cd753738e9aed0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bbf12f57d42638e468f7a5d7c373a5af, type: 2}
     - target: {fileID: 9200391732922950530, guid: cff5b07fa93c434429cd753738e9aed0,
         type: 3}
       propertyPath: m_RootOrder
