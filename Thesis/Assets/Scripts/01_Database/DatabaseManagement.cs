@@ -41,13 +41,13 @@ public class DatabaseManagement : MonoBehaviour
 
     public void sendScreenshotTutorial()
     {
-        //Händisch eingegeben, damit es funktioniert. Tests für Android nötig
-        ScreenCapture.CaptureScreenshot("Assets/" + userID + "_tutorial.png");
-        //für Android persistendData..
-        string url = Application.dataPath + "/" + userID + "_tutorial.png";
-        byte[] bytes = File.ReadAllBytes("Assets/" + userID + "_tutorial.png");
+        ScreenCapture.CaptureScreenshot(userID + "_tutorial.jpg");
+        StorageReference uploadRef = storageReference.Child(userID + "_tutorial.jpg");
+        StorageReference uploadImageRef = storageReference.Child(userID + "_tutorial.jpg");
+        string url = userID + "_tutorial.jpg";
+        byte[] bytes = File.ReadAllBytes(url);
 
-        StorageReference uploadRef = storageReference.Child("uploads/" + userID + "_tutorial.png");
+        //StorageReference uploadRef = storageReference.Child("assets/" + userID + "_tutorial.png");
         uploadRef.PutBytesAsync(bytes).ContinueWithOnMainThread((task) =>
         {
             if (task.IsFaulted || task.IsCanceled)

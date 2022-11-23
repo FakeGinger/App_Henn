@@ -15,7 +15,7 @@ public class _Start : MonoBehaviour
     {
         //Für LimeSurvey
         userID = SystemInfo.deviceUniqueIdentifier;
-        link = "https://claustrophobiavr.limesurvey.net/329637?token=llDx866cZvDy24k&newtest=Y&Phone_ID=" + userID;  
+        link = "http://claustrophobiavr.limesurvey.net/329637?token=llDx866cZvDy24k&newtest=Y&Phone_ID=" + userID;  
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": App-Start");
         database.GetComponent<DatabaseManagement>().SendLog("----------");
     }
