@@ -2852,6 +2852,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 338321945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &338321947 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6424294912101931191, guid: 82edb15447b03ab418f82c2bc9a5cb06,
+    type: 3}
+  m_PrefabInstance: {fileID: 338321945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338321946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9315577cf5443204eab082c54e1146ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &338680110
 GameObject:
   m_ObjectHideFlags: 0
@@ -6700,7 +6712,6 @@ GameObject:
   - component: {fileID: 831967417}
   - component: {fileID: 831967416}
   - component: {fileID: 831967415}
-  - component: {fileID: 831967414}
   - component: {fileID: 831967413}
   m_Layer: 5
   m_Name: NavMesh_Furniture
@@ -6763,22 +6774,6 @@ MonoBehaviour:
   switchHere: Yes
   gui: {fileID: 4238201529052355023}
   gui_Furniture: {fileID: 1378818576}
---- !u!114 &831967414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831967411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86bf423b66507b14fa783dd407fd3a44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationTextUI: {fileID: 0}
-  notificationIconUI: {fileID: 0}
-  test: {fileID: 0}
-  noteScriptable: {fileID: 0}
 --- !u!114 &831967415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10664,13 +10659,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 338321947}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1017007139}
     - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: sendScreenshotDrawMP
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532255804404896675, guid: 3f2e7818811c00a418f2ee589a12f398,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2532255804887359258, guid: 3f2e7818811c00a418f2ee589a12f398,
         type: 3}
@@ -12323,7 +12368,6 @@ GameObject:
   - component: {fileID: 1624142094}
   - component: {fileID: 1624142093}
   - component: {fileID: 1624142092}
-  - component: {fileID: 1624142091}
   - component: {fileID: 1624142090}
   m_Layer: 5
   m_Name: NavMesh_Furniture
@@ -12386,22 +12430,6 @@ MonoBehaviour:
   switchHere: No
   gui: {fileID: 0}
   gui_Furniture: {fileID: 0}
---- !u!114 &1624142091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624142088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86bf423b66507b14fa783dd407fd3a44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationTextUI: {fileID: 0}
-  notificationIconUI: {fileID: 0}
-  test: {fileID: 0}
-  noteScriptable: {fileID: 0}
 --- !u!114 &1624142092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12445,17 +12473,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152913441}
-        m_MethodName: takeCaptureOne
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1624142090}
         m_MethodName: buildMesh
         m_Mode: 1
@@ -21194,7 +21211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &4241103806299381369
 BoxCollider:
   m_ObjectHideFlags: 0

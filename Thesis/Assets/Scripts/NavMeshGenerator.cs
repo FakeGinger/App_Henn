@@ -68,12 +68,12 @@ public class NavMeshGenerator : MonoBehaviour
 
             if (CalculateNewPath() == true)
             {
+                database.GetComponent<DatabaseManagement>().sendScreenshotBuild();
                 path.SetActive(true);
                 Globals.notification = true;
 
                 if (this.name != "NavMesh_Furniture")
                 {
-                    //path_doors.SetActive(true);
                     database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Es wurden ausreichend Türen platziert. Phase 3: Fenster kann gestartet werden.");
                 }
                 else

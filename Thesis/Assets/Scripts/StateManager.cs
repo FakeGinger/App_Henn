@@ -76,10 +76,6 @@ public class StateManager : MonoBehaviour
         Globals.placeWindow = false;
     }
 
-    public void takeCaptureOne()
-    {
-        ScreenCapture.CaptureScreenshot("Building.png");
-    }
 
     public void activateVR()
     {

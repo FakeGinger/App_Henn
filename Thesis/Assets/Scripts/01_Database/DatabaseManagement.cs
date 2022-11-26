@@ -44,7 +44,7 @@ public class DatabaseManagement : MonoBehaviour
         ScreenCapture.CaptureScreenshot(userID + "_tutorial.jpg");
         StorageReference uploadRef = storageReference.Child(userID + "_tutorial.jpg");
         StorageReference uploadImageRef = storageReference.Child(userID + "_tutorial.jpg");
-        string url = userID + "_tutorial.jpg";
+        string url = Application.persistentDataPath + "/" + userID + "_tutorial.jpg";
         byte[] bytes = File.ReadAllBytes(url);
 
         //StorageReference uploadRef = storageReference.Child("assets/" + userID + "_tutorial.png");
@@ -58,6 +58,60 @@ public class DatabaseManagement : MonoBehaviour
         });
     }
 
+
+    public void sendScreenshotBuild()
+    {
+        ScreenCapture.CaptureScreenshot(userID + "_build.jpg");
+        StorageReference uploadRef = storageReference.Child(userID + "_build.jpg");
+        StorageReference uploadImageRef = storageReference.Child(userID + "_build.jpg");
+        string url = Application.persistentDataPath + "/" + userID + "_build.jpg";
+        byte[] bytes = File.ReadAllBytes(url);
+
+        uploadRef.PutBytesAsync(bytes).ContinueWithOnMainThread((task) =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                Debug.Log(task.Exception.ToString());
+            }
+            else { }
+        });
+    }
+
+    public void sendScreenshotDrawMP()
+    {
+        ScreenCapture.CaptureScreenshot(userID + "_drawMP.jpg");
+        StorageReference uploadRef = storageReference.Child(userID + "_drawMP.jpg");
+        StorageReference uploadImageRef = storageReference.Child(userID + "_drawMP.jpg");
+        string url = Application.persistentDataPath + "/" + userID + "_drawMP.jpg";
+        byte[] bytes = File.ReadAllBytes(url);
+
+        uploadRef.PutBytesAsync(bytes).ContinueWithOnMainThread((task) =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                Debug.Log(task.Exception.ToString());
+            }
+            else { }
+        });
+    }
+
+    public void sendScreenshotDrawOP()
+    {
+        ScreenCapture.CaptureScreenshot(userID + "_drawOP.jpg");
+        StorageReference uploadRef = storageReference.Child(userID + "_drawOP.jpg");
+        StorageReference uploadImageRef = storageReference.Child(userID + "_drawOP.jpg");
+        string url = Application.persistentDataPath + "/" + userID + "_drawOP.jpg";
+        byte[] bytes = File.ReadAllBytes(url);
+
+        uploadRef.PutBytesAsync(bytes).ContinueWithOnMainThread((task) =>
+        {
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                Debug.Log(task.Exception.ToString());
+            }
+            else { }
+        });
+    }
 
     public void setVersion(int number)
     {
