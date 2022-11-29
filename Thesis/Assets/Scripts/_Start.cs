@@ -36,7 +36,7 @@ public class _Start : MonoBehaviour
     {
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Der erste Fragebogen wurde beendet.");
         database.GetComponent<DatabaseManagement>().SendLog("----------");
-        int scene = Random.Range(1, 2);
+        int scene = Random.Range(1, 3);
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Version " + scene +  " wird geladen.");
         database.GetComponent<DatabaseManagement>().setVersion(scene);
         database.GetComponent<DatabaseManagement>().SendLog("----------");

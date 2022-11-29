@@ -68,7 +68,6 @@ public class NavMeshGenerator : MonoBehaviour
 
             if (CalculateNewPath() == true)
             {
-                database.GetComponent<DatabaseManagement>().sendScreenshotBuild();
                 path.SetActive(true);
                 Globals.notification = true;
 
@@ -78,6 +77,7 @@ public class NavMeshGenerator : MonoBehaviour
                 }
                 else
                 {
+                    database.GetComponent<DatabaseManagement>().sendScreenshotBuild();
                     if (Globals.objectID != 0)
                     {
                         string test = Globals.objectID.ToString();

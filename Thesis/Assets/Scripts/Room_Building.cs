@@ -139,7 +139,7 @@ public class Room_Building : MonoBehaviour
             }
         }
 
-        //Globals.buildRoom = false;
+        Globals.buildRoom = false;
         database.GetComponent<DatabaseManagement>().SendLog(Globals.worldTime + ": Raum " + this.name + " wurde auf die Position " + this.transform.position + " bewegt.");
     }
 
