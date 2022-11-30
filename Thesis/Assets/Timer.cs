@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerRunning = false;
-                if (description == "Memory")
+                if (description == "Memory" || description == "PUT")
                 {
                     if (!additionalTime)
                     {

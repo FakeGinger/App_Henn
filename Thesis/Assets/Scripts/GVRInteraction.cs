@@ -10,7 +10,9 @@ public class GVRInteraction : MonoBehaviour
     public float totalTime = 2;
     bool GVRStatus;
     public float GVRTimer;
-    public UnityEvent GVRClick;
+
+    public int distanceOfRay = 10;
+    private RaycastHit _hit;
 
     void Update()
     {
@@ -20,12 +22,20 @@ public class GVRInteraction : MonoBehaviour
             circle.fillAmount = GVRTimer / totalTime;
         }
 
-        GVRClick.Invoke();
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        if(Physics.Raycast(ray, out _hit, distanceOfRay))
+        {
+            if(circle.fillAmount == 1)
+            {
+                _hit.transform.gameObject.GetComponent<AnswerCubes>().logAnswer();
+            }
+        }
     }
 
     public void LookOn()
     {
         GVRStatus = true;
+        Debug.Log("hit");
     }
 
     public void LookOff()
